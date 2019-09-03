@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+.banner {
+
+  .banner-leftRs {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width:50px;
+    height: 50px;
+    border-radius: 40px;
+    background: #000;
+    opacity: .8;
+    color: #fff;
+    font-weight: bolder;
+    border: none;
+  }
+
+  .banner-rightRs {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    background: #000;
+    opacity: .8;
+    color: #fff;
+    font-weight: bolder;
+    border: none;
+  }
+}

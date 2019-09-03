@@ -1,0 +1,20 @@
+<div class="container com-sp pad-bot-70">
+  <div class="row">
+    <div class="con-title">
+      <h2>Discover <span>More</span></h2>
+      <p>Fusce id sem at ligula laoreet hendrerit venenatis sed purus. Ut pellentesque maximus lacus, nec pharetra
+        augue.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-4 col-xs-12" *ngFor="let item of discoverMoreItems"
+    [hidden]="item.isVisible==false">
+      <div class="ed-course-in">
+        <a routerLink="{{item.displayValue}}" class="course-overlay" >
+          <img src="{{item.imgSrc}}" alt="">
+          <span>{{item.displayText}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

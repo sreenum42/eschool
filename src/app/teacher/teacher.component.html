@@ -1,0 +1,54 @@
+<!--SECTION START-->
+<section>
+  <div class="pro-cover">
+  </div>
+  <div class="pro-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8">
+          <ul>
+            <li><a routerLink="./" routerLinkActve="active" class="pro-act">My Dashboard</a></li>
+            <li><a routerLink="./profile" routerLinkActve="active">Profile</a></li>
+            <li><a routerLink="./course" routerLinkActve="active">Courses</a></li>
+            <li><a routerLink="./exam" routerLinkActve="active">Exams</a></li>
+            <li><a routerLink="./timeline" routerLinkActve="active">Time Line</a></li>
+            <li><a routerLink="./entry" routerLinkActve="active">Entry</a></li>
+            <li><a routerLink="./notification" routerLinkActve="active">Notifications</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stu-db">
+    <div class="container pg-inn">
+      <div class="row">
+        <div class="col-lg-3 col-md-3">
+          <div class="pro-user">
+          <img src="{{'data:image/jpg;base64,' + teacher.imgSrc}}" />
+
+          </div>
+          <div class="pro-user-bio">
+            <ul>
+              <li>
+                <h4>{{teacher.teacherFirstName}} {{teacher.teacherLastName}}</h4>
+              </li>
+              <li>Teacher Id: {{teacher._id}}</li>
+              <li><a href="https://www.facebook.com/{{teacher.teacherFirstName}}{{teacher.teacherLastName}}" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
+              <li><a href="https://www.googleplus.com/{{teacher.teacherFirstName}}{{teacher.teacherLastName}}" target="_blank"><i class="fa fa-google-plus"></i> Google</a></li>
+              <li><a href="https://www.twitter.com/{{teacher.teacherFirstName}}{{teacher.teacherLastName}}" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-9">
+          <!-- place holder -->
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--SECTION END-->

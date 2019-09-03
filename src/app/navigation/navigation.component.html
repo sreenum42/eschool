@@ -1,0 +1,203 @@
+<div class="top-logo" data-spy="affix" data-offset-top="250">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="wed-logo">
+            <a [routerLink]="['/']"><img src="../assets/../assets/images/logo.png" alt="" />
+            </a>
+          </div>
+          <div class="main-menu">
+            <ul>
+              <li *ngFor="let menu of menuItem" class="admi-menu">
+                  <a  *ngIf="menu.id==2" [routerLink]="menu.route" routerLinkActive="active" (mouseover)="aboutMenu=true" (mouseout)="aboutMenu=false">{{menu.text}}
+                    </a>
+                    <div *ngIf="menu.id==2" (mouseover)="aboutMenu=true" (mouseout)="aboutMenu=false" class="mm-pos" [ngStyle]="{'display' : aboutMenu ? 'block' : 'none'}">
+                      <div class="">
+                          <div class="m-menu">
+                              <div class="m-menu-inn">
+                                  <div class="mm1-com mm1-s1">
+                                      <div class="ed-course-in">
+                                          <a (click)="aboutMenu=false" class="course-overlay menu-about" [routerLink]="['/admission']" (click)="aboutMenu=false" >
+                                              <img src="../assets/images/h-about.jpg" alt="">
+                                              <span>Academics</span>
+                                          </a>
+                                      </div>
+                                  </div>
+                                  <div class="mm1-com mm1-s2">
+                                      <p>Want to change the world? At Berkeley we’re doing just that. When you join the Golden Bear community, you’re part of an institution that shifts the global conversation every single day.</p>
+                                      <a (click)="aboutMenu=false" [routerLink]="['/about']" class="mm-r-m-btn">Read more</a>
+                                  </div>
+                                  <div class="mm1-com mm1-s3">
+                                      <ul>
+                                          <li><a (click)="aboutMenu=false" [routerLink]="['/all-courses']" >All Courses</a></li>
+                                          <li><a (click)="aboutMenu=false" [routerLink]="['/course-detail']">Course details</a></li>
+                                          <li><a (click)="aboutMenu=false" [routerLink]="['/about']">About</a></li>
+                                          <li><a (click)="aboutMenu=false" [routerLink]="['/admission']">Admission</a></li>
+                                          <li><a (click)="aboutMenu=false" [routerLink]="['/awards']">Awards</a></li>
+                                      </ul>
+                                  </div>
+                                  <div class="mm1-com mm1-s4">
+                                      <ul>
+                                          <li><a (click)="aboutMenu=false" [routerLink]="['/student']">Student profile</a></li>
+                                          <li><a (click)="aboutMenu=false" [routerLink]="['/courses']">Dashboard courses</a></li>
+                                          <li><a (click)="aboutMenu=false" [routerLink]="['/exams']">Dashboard exams</a></li>
+                                          <li><a (click)="aboutMenu=false" [routerLink]="['/profile']">Dashboard profile</a></li>
+                                          <li><a (click)="aboutMenu=false" [routerLink]="['/timeline']">Dashboard timeline</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                <a  *ngIf="menu.id!==2&&menu.id!==3&&menu.id!==5" [routerLink]="menu.route" routerLinkActive="active">{{menu.text}}</a>
+                <a  *ngIf="menu.id==3" [routerLink]="menu.route" routerLinkActive="active" (mouseover)="changeText=true" (mouseout)="changeText=false">{{menu.text}}
+                </a>
+                <div *ngIf="menu.id==3" (mouseover)="changeText=true" (mouseout)="changeText=false" class="mm-pos" [ngStyle]="{'display' : changeText ? 'block' : 'none'}">
+                  <div >
+                      <div class="m-menu">
+                          <div class="m-menu-inn">
+                              <div class="mm2-com mm1-com mm1-s1">
+                                  <div class="ed-course-in">
+                                      <a (click)="changeText=false" class="course-overlay" [routerLink]="['/about']">
+                                          <img src="../assets/images/h-about1.jpg" alt="">
+                                          <span>Academics</span>
+                                      </a>
+                                  </div>
+                                  <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
+                                  <a (click)="changeText=false" [routerLink]="['/about']" class="mm-r-m-btn">Read more</a>
+                              </div>
+                              <div class="mm2-com mm1-com mm1-s1">
+                                  <div class="ed-course-in">
+                                      <a (click)="changeText=false" class="course-overlay" [routerLink]="['/admission']">
+                                          <img src="../assets/images/h-adm1.jpg" alt="">
+                                          <span>Admission</span>
+                                      </a>
+                                  </div>
+                                  <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
+                                  <a (click)="changeText=false" [routerLink]="['/admission']" class="mm-r-m-btn">Read more</a>
+                              </div>
+                              <div class="mm2-com mm1-com mm1-s1">
+                                  <div class="ed-course-in">
+                                      <a (click)="changeText=false" class="course-overlay" [routerLink]="['/awards']" >
+                                          <img src="../assets/images/h-cam1.jpg" alt="">
+                                          <span>History &amp; awards</span>
+                                      </a>
+                                  </div>
+                                  <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
+                                  <a (click)="changeText=false" [routerLink]="['/awards']"  class="mm-r-m-btn">Read more</a>
+                              </div>
+                              <div class="mm2-com mm1-com mm1-s4">
+                                  <div class="ed-course-in">
+                                      <a (click)="changeText=false" class="course-overlay" [routerLink]="['/seminar']">
+                                          <img src="../assets/images/h-res1.jpg" alt="">
+                                          <span>Seminar 2018</span>
+                                      </a>
+                                  </div>
+                                  <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
+                                  <a (click)="changeText=false" [routerLink]="['/seminar']" class="mm-r-m-btn">Read more</a>
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                    <a  *ngIf="menu.id==5" [routerLink]="menu.route" routerLinkActive="active" (mouseover)="allpages=true" (mouseout)="allpages=false">{{menu.text}}
+                    </a>
+                    <div *ngIf="menu.id==5" (mouseover)="allpages=true" (mouseout)="allpages=false" class="mm-pos" [ngStyle]="{'display' : allpages ? 'block' : 'none'}">
+                      <div>
+                        <div class="m-menu">
+                            <div class="m-menu-inn">
+                                <div class="mm1-com mm1-cour-com mm1-s3">
+                  <h4>Frontend pages:1</h4>
+                                    <ul>
+                                        <li><a (click)="allpages=false" [routerLink]="['/']">Home</a></li>
+
+                  <li><a (click)="allpages=false" [routerLink]="['/all-courses']">All Courses</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/course-detail']">Course Details</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/about']">About us</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admission']">admission</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/awards']" >awards</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/blog']">blog</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/blog-detail']">blog details</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/contact']">contact us</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/departments']">Departments</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/event']">events</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/event-details']">event details</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/event-register']">event register</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mm1-com mm1-cour-com mm1-s3">
+                  <h4>Frontend pages:2</h4>
+                                    <ul>
+                  <li><a (click)="allpages=false" [routerLink]="['/facilities']">facilities</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/facilities-detail']">facilities detail</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/research']">research</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/seminar']">seminar</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/photo-gallery']">gallery photo</a></li>
+                                    </ul>
+                  <h4 class="ed-dr-men-mar-top">User Dashboard</h4>
+                                    <ul>
+                                        <li><a (click)="allpages=false"  [routerLink]="['/student']">Student profile</a></li>
+                                        <li><a (click)="allpages=false"  [routerLink]="['/courses']">Dashboard courses</a></li>
+                                        <li><a (click)="allpages=false"  [routerLink]="['/exams']">Dashboard exams</a></li>
+                                        <li><a (click)="allpages=false"  [routerLink]="['/profile']">Dashboard profile</a></li>
+                                        <li><a (click)="allpages=false"  [routerLink]="['/timeline']">Dashboard timeline</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mm1-com mm1-cour-com mm1-s3">
+                  <h4>Admin panel:1</h4>
+                                    <ul>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-dashboard']" routerLinkActive="router-link-active" >admin</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-add-courses']">Add new course</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-all-courses']">All courses</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-student-details']">Student details</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/add-student']">Add new user</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/all-students']">All users</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-setting']">Admin setting</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/event-add']">event add</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/event-all']">event all</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-course-details']">course details</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-login']">admin login</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mm1-com mm1-cour-com mm1-s3">
+                  <h4>Admin panel:2</h4>
+                                    <ul>
+                  <li><a (click)="allpages=false" [routerLink]="['/event-edit']">event edit</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-exam-add']">exam add</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-exam-all']">exam all</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-exam-edit']">exam edit</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-forgot']">forgot password</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mm1-com mm1-cour-com mm1-s4">
+                  <h4>Admin panel:3</h4>
+                                    <ul>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-seminar-add']">Add new seminar</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-seminar-all']">All seminar</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admin-seminar-edit']">Edit seminar</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/semister-enquiries']">Semester enquiry</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/all-enquiries']">All enquiry</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/all-enquiries-view']">All enquiry view</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/event-enquiries']">event enquiry</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/admission-enquiries']">Admission enquiry</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/common-enquiries']">common enquiry</a></li>
+                  <li><a (click)="allpages=false" [routerLink]="['/course-enquiries']">course enquiry</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <!-- routerLink="/about" routerLinkActive="active" -->
+              </li>
+
+            </ul>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>

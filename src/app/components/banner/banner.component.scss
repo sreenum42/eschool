@@ -1,0 +1,69 @@
+.banner {
+  .item{
+    padding: 0;
+  }
+  .tile {
+    height: 570px;
+
+    .banner-caption {
+
+      padding: 12% 15%;
+      height: 350px;
+      text-align: center;
+
+      h2 {
+        font-size: 50px;
+        text-transform: uppercase;
+        line-height: 50px;
+        color: #fff;
+      }
+
+      p {
+        font-size: 20px;
+        color: #fff;
+        margin-bottom: 40px;
+        margin-top: 30px;
+        line-height: 30px;
+        font-weight: 300;
+      }
+
+      .banner-btn-1 {
+        background: #f36b3b;
+        background: -webkit-linear-gradient(to top, #ef612f, #f36b3b);
+        background: linear-gradient(to top, #ef612f, #f36b3b);
+        color: #fff;
+        border: 1px solid #f36b3b;
+      }
+
+      .banner-btn-2 {
+        border: 1px solid #e0e0e0;
+        color: #e0e0e0;
+      }
+
+      a {
+        padding: 14px 45px;
+        line-height: 45px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        height: 45px;
+        text-align: center;
+        margin: 0px 10px;
+      }
+
+    }
+
+    .banner-leftRs {
+      position: absolute;
+      left: 0;
+      top: 10%
+    }
+
+    .banner-rightRs {
+      position: absolute;
+      right: 0;
+      top: 10%
+    }
+  }
+}

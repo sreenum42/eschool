@@ -1,0 +1,125 @@
+
+<es-admin></es-admin>
+<div class="sb2-2">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box-inn-sp admin-form">
+        <div class="inn-title">
+          <h4>{{formTitle}}</h4>
+          <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password and more</p>
+        </div>
+        <div class="tab-inn">
+          <form novalidate name="form" #f="ngForm">
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" name="FirstName" [(ngModel)]="student.FirstName" placeholder="First Name"
+                  #FirstName="ngModel" required>
+
+                <div style="color:red;" *ngIf="FirstName.invalid && (FirstName.dirty || FirstName.touched)">
+                  First Name is required
+                </div>
+
+              </div>
+              <div class="input-field col s6">
+                <input type="text" name="LastName" [(ngModel)]="student.LastName" placeholder="Last Name"
+                  #LastName="ngModel" required>
+
+                <div style="color:red;" *ngIf="LastName.invalid && (LastName.dirty || LastName.touched)">
+                  Last Name is required
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" name="PhoneNo" [(ngModel)]="student.PhoneNo" placeholder="Phone number"
+                  #PhoneNo="ngModel" required maxlength="12">
+                <div style="color:red;" *ngIf="PhoneNo.invalid && (PhoneNo.dirty || PhoneNo.touched)">
+                  Phone Number is required
+                </div>
+              </div>
+              <div class="input-field col s6">
+                <input type="text" name="Email" [(ngModel)]="student.Email" placeholder="Email id" #Email="ngModel"
+                  required email>
+                <div style="color:red;" *ngIf="Email.invalid && (Email.dirty || Email.touched)">
+                  <div *ngIf="Email.errors.required">Email is required</div>
+                  <div *ngIf="Email.errors.email">Email must be a valid email address</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" name="City" [(ngModel)]="student.City"  placeholder="City" #City="ngModel" required>
+                <div style="color:red;" *ngIf="City.invalid && (City.dirty || City.touched)">
+                  city is required
+                </div>
+
+              </div>
+              <div class="input-field col s6">
+                <input type="text" name="Country" [(ngModel)]="student.Country" placeholder="Country" #Country="ngModel" required>
+                <div style="color:red;" *ngIf="Country.invalid && (Country.dirty || Country.touched)">
+                  Country is required
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="Password" name="Password" [(ngModel)]="student.Password" placeholder="Password With hide" #Password="ngModel" required
+                  minlength="8">
+                <div style="color:red;" *ngIf="Password.invalid && (Password.dirty || Password.touched)">
+                  <div *ngIf="Password.errors.required">Password is required</div>
+                  <div *ngIf="Password.errors.minlength">Password must be at least 8 characters</div>
+                </div>
+              </div>
+              <div class="input-field col s6">
+                <input type="text" name="password" placeholder="Confirm Password" required>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" name="StudentId" [(ngModel)]="student.StudentId" placeholder="Student Id"   #StudentId="ngModel" required>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="checkbox" name="status" #status="ngModel" class="filled-in" id="statusBox" checked="checked" [(ngModel)]="student.Status"/>
+                <label for="statusBox">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="file-field input-field col s12">
+                <div class="btn admin-upload-btn" style="background-color: #2bbbad;padding: 0px 10px;
+                width: 120px;">
+                  <span>File</span>
+                  <input (change)="picked($event)" type="file" style="width:120px;">
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="student.ImgSrc" class="row">
+              <p *ngIf="studentFileName" style="width:100%">{{studentFileName.name}}</p><br>
+              <img src="{{'data:image/jpg;base64,' + student.ImgSrc}}" alt="">
+
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <!-- <i class="waves-effect waves-light btn-large waves-input-wrapper" style="">
+                  <input type="submit" class="waves-button-input">
+                </i> -->
+                <button class="waves-effect waves-light log-in-btn" (click)="signupHandler()"
+                  [disabled]="!f.form.valid">{{buttonTitle}}</button>
+
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

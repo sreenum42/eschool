@@ -1,0 +1,83 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="log-in-pop">
+          <div class="log-in-pop-left">
+            <h1>Hello...</h1>
+            <p>Don't have an account? Create your account. It's take less then a minutes</p>
+            <h4>Login with social media</h4>
+            <ul>
+              <li><a [routerLink]="['/']"><i class="fa fa-facebook"></i> Facebook</a>
+              </li>
+              <li><a [routerLink]="['/']"><i class="fa fa-google"></i> Google+</a>
+              </li>
+              <li><a [routerLink]="['/']"><i class="fa fa-twitter"></i> Twitter</a>
+              </li>
+            </ul>
+          </div>
+          <div class="log-in-pop-right">
+            <a [routerLink]="['/']" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
+            </a>
+            <h4>Create an Account</h4>
+            <p>Don't have an account? Create your account. It's take less then a minutes</p>
+            <form novalidate name="form" #f="ngForm">
+              <div>
+                <div class="input-field">
+                  <input type="text" name="userName" [(ngModel)]="user.userName" #userName="ngModel" required>
+                  <label>User name</label>
+                  <div style="color:red;" *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+                    User name is required
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="input-field">
+                  <input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required email>
+                  <label>Email id</label>
+                  <div style="color:red;" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors.required">Email is required</div>
+                    <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="input-field">
+                  <input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required minlength="8">
+                  <label>Password</label>
+                  <div style="color:red;" *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div *ngIf="password.errors.required">Password is required</div>
+                    <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div>
+                <div class="input-field s12">
+                  <input type="password" class="validate"  name="confirm" >
+                  <label>Confirm password</label>
+                </div>
+              </div> -->
+              <div>
+                <div class="input-field s4">
+                  <button class="waves-effect waves-light log-in-btn" (click)="signupHandler()"
+                  [disabled]="!f.form.valid">Register</button>
+                  <!-- <input type="submit" value="Register" class="waves-effect waves-light log-in-btn">  -->
+                </div>
+              </div>
+              <div>
+                <div class="input-field s12"> <a [routerLink]="['/']" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are
+                    you a already member ? Login</a> </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class="col-lg-8">
+        <p>
+          some ads or promotoons will come
+        </p>
+      </div>   -->
+    </div>
+  </div>
+</section>

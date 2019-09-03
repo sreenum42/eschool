@@ -1,0 +1,90 @@
+ <!-- placeholder -->
+ <!-- <div class="container-fluid sb2"> -->
+ <div class="container-fluid">
+   <div class="row">
+     <!-- side bar/ LHS -->
+     <div class="sb2-1">
+       <!--== USER INFO ==-->
+       <div class="sb2-12">
+         <ul>
+           <li><img src="../../assets/images/placeholder.jpg" alt="">
+           </li>
+           <li>
+             <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
+           </li>
+           <li></li>
+         </ul>
+       </div>
+       <!--== LEFT MENU ==-->
+       <div class="sb2-13">
+         <ul class="collapsible" data-collapsible="accordion">
+           <li><a routerLink="./" routerLinkActve="active" class="menu-active"><i class="fa fa-bar-chart"
+                 aria-hidden="true"></i> Dashboard</a>
+           </li>
+
+           <li>
+             <a routerLink="./admin-user" routerLinkActve="active" class="collapsible-header"><i class="fa fa-user"
+                 aria-hidden="true"></i>
+               Admin User</a>
+
+           </li>
+           <li><a routerLink="./course" routerLinkActve="active" class="collapsible-header"><i class="fa fa-book"
+                 aria-hidden="true"></i> All
+               Course</a>
+           </li>
+           <li>
+             <a routerLink="./event" routerLinkActve="active" class="collapsible-header"><i class="fa fa-calendar"
+                 aria-hidden="true"></i>
+               Event</a>
+           </li>
+
+           <li><a routerLink="./student" routerLinkActve="active" class="collapsible-header"><i class="fa fa-users"
+                                                                                                aria-hidden="true"></i>
+             Student</a>
+           </li>
+           <li><a routerLink="./student/all-students" routerLinkActve="active" class="collapsible-header"><i class="fa fa-users"
+                                                                                                             aria-hidden="true"></i>
+             ALL Students</a>
+           </li>
+           <li><a routerLink="./student/add-student" routerLinkActve="active" class="collapsible-header"><i class="fa fa-users"
+                                                                                                            aria-hidden="true"></i>
+             Add Student</a>
+           </li>
+
+
+           <li><a routerLink="./teacher/all-teacher" routerLinkActve="active" class="collapsible-header"><i class="fa fa-users"
+                                                                                                             aria-hidden="true"></i>
+             ALL Teacher</a>
+           </li>
+           <li><a routerLink="./teacher/add-teacher" routerLinkActve="active" class="collapsible-header"><i class="fa fa-users"
+                                                                                                            aria-hidden="true"></i>
+             Add Teacher</a>
+           </li>
+
+
+           <li><a routerLink="./trainer" routerLinkActve="active" class="collapsible-header"><i class="fa fa-users"
+                 aria-hidden="true"></i>
+               Trainer</a>
+           </li>
+           <li><a routerLink="./allpages" routerLinkActve="active" class="collapsible-header"><i class="fa fa-users"
+                                                                                                 aria-hidden="true"></i>
+             All Pages</a>
+           </li>
+
+           <li><a routerLink="./createpage" routerLinkActve="active" class="collapsible-header"><i class="fa fa-users"
+                                                                                                   aria-hidden="true"></i>
+             Crete Pages</a>
+           </li>
+
+         </ul>
+       </div>
+     </div>
+
+
+     <div class="sb2-2">
+       <router-outlet></router-outlet>
+     </div>
+     <!-- i need 2 col -->
+
+   </div>
+ </div>

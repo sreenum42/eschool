@@ -1,0 +1,62 @@
+<div class="banner">
+  <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="carouselTileItems">
+    <ngu-tile *nguCarouselDef="let item; let i = index; let ani = animate">
+      <!-- [@slider]="ani" PLease this animation to this tile to see animation. stackblitz have error with animations -->
+      <!-- <div class="tile" > -->
+      <div class="tile" [style.background]="'url('+item.imgSrc+')'">
+        <div class="banner-caption slider-con">
+          <h2>{{item.header}}<span>{{item.span}}</span></h2>
+          <p>{{item.description}}</p>
+          <a [routerLink]="['/']" class="banner-btn-1">{{item.ctaInfo}}</a>
+          <a [routerLink]="['/']" class="banner-btn-2">Read More</a>
+        </div>
+      </div>
+    </ngu-tile>
+
+    <button NguCarouselPrev class="banner-leftRs">&lt;</button>
+    <button NguCarouselNext class="banner-rightRs">&gt;</button>
+
+    <!-- <ul class="myPoint" NguCarouselPoint>
+      <li *ngFor="let i of myCarousel.pointNumbers; let i = index" [class.active]="i==myCarousel.activePoint"
+        (click)="myCarousel.moveTo(i)"></li>
+    </ul> -->
+  </ngu-carousel>
+</div>
+
+<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner">
+        <div class="item slider1 active">
+            <img src="../../../assets//images/slider/1.jpg" alt="">
+            <div class="carousel-caption slider-con">
+                <h2>Welcome to <span>University</span></h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                <a [routerLink]="['/']" class="bann-btn-1">All Courses</a><a [routerLink]="['/']" class="bann-btn-2">Read More</a>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../../../assets//images/slider/2.jpg" alt="">
+            <div class="carousel-caption slider-con">
+                <h2>Admission open <span>2018</span></h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                <a [routerLink]="['/']" class="bann-btn-1">Admission</a><a [routerLink]="['/']" class="bann-btn-2">Read More</a>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../../../assets//images/slider/3.jpg" alt="">
+            <div class="carousel-caption slider-con">
+                <h2>Education <span>Master</span></h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                <a [routerLink]="['/']" class="bann-btn-1">All Courses</a><a [routerLink]="['/']" class="bann-btn-2">Read More</a>
+            </div>
+        </div>
+    </div>
+
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <i class="fa fa-chevron-left slider-arr"></i>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <i class="fa fa-chevron-right slider-arr"></i>
+    </a>
+</div> -->

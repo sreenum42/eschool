@@ -1,0 +1,64 @@
+<es-admin></es-admin>
+<div class="sb2-2">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box-inn-sp">
+        <p>
+          <input type="text" name="searchText" [(ngModel)]="searchText">
+        </p>
+        <div class="inn-title">
+          <h4>Student Details</h4>
+          <p>All about students like name, student id, phone, email, country, city and more</p>
+        </div>
+        <div class="tab-inn">
+          <div class="table-responsive table-desi">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                  <th>Country</th>
+                  <th>Id</th>
+                  <th>Date of birth</th>
+                  <th>Status</th>
+                  <th>Update</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr *ngFor="let student of studentsList | adminSearch:searchText:'student'">
+                  <td>
+                    <span class="list-img"> <img src="{{'data:image/jpg;base64,' + student.ImgSrc}}" /></span>
+                  </td>
+                  <td>{{student.FirstName}} {{student.LastName}} </td>
+                  <td>{{student.PhoneNo}} </td>
+                  <td>{{student.Email}} </td>
+                  <td>{{student.Country}}</td>
+                  <td>{{student.StudentId}}</td>
+                  <td>{{student.DOB}}</td>
+                  <td>
+                    <span class="label label-success">{{student.status?'Active':'In Active'}}</span>
+                  </td>
+
+                  <td>
+
+                    <a  [routerLink]="['/admin/student/add-student',student._id]" routerLinkActve="active" class="ad-st-view">View</a>
+                    <!-- <a routerLink="'./teacher/edit-teacher'+teacher._id" routerLinkActve="active" class="ad-st-view">View</a> -->
+                    <!-- <span class="btn btn-primary" (click)="updateProfile(teacher)">Update</span> -->
+                  </td>
+
+<!--                  -->
+<!--                  <td><span class="btn btn-primary" (click)="updateProfile(student)">Update</span></td>-->
+<!--                  <td><span class="btn btn-danger" (click)="deleteProfile(student)">Delete</span></td>-->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

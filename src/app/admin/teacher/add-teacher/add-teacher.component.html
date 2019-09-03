@@ -1,0 +1,157 @@
+<div class="sb2-2-3">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box-inn-sp admin-form">
+        <div class="inn-title">
+          <h4>{{formTitle}}</h4>
+          <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password and more</p>
+        </div>
+        <div class="tab-inn">
+          <form novalidate name="form" #f="ngForm">
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" name="teacherId" [(ngModel)]="teacher.teacherId" #teacherId="ngModel"
+                  placeholder="Teacher Id" required>
+                <div style="color:red;" *ngIf="teacherId.invalid && (teacherId.dirty || teacherId.touched)">
+                  TeacherId is required
+                </div>
+              </div>
+              <div class="input-field col s6">
+                <input type="text" name="Email" [(ngModel)]="teacher.teacherEmail" placeholder="Email id"
+                  #Email="ngModel" required email>
+                <div style="color:red;" *ngIf="Email.invalid && (Email.dirty || Email.touched)">
+                  <div *ngIf="Email.errors.required">Email is required</div>
+                  <div *ngIf="Email.errors.email">Email must be a valid email address</div>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" name="firstName" [(ngModel)]="teacher.teacherFirstName" placeholder="First Name"
+                  #firstName="ngModel" required>
+
+                <div style="color:red;" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                  First Name is required
+                </div>
+
+              </div>
+              <div class="input-field col s6">
+                <input type="text" name="lastName" [(ngModel)]="teacher.teacherLastName" placeholder="Last name"
+                  #lastName="ngModel" required>
+
+                <div style="color:red;" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                  Last Name is required
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" name="phoneNo" [(ngModel)]="teacher.mobileNo" placeholder="Phone number"
+                  #phoneNo="ngModel" required maxlength="14">
+
+                <div style="color:red;" *ngIf="phoneNo.invalid && (phoneNo.dirty || phoneNo.touched)">
+                  Phone Number is required
+                </div>
+              </div>
+              <div class="input-field col s6">
+                <input type="text" name="address" [(ngModel)]="teacher.address" #address="ngModel" placeholder="address"
+                  required>
+                <div style="color:red;" *ngIf="address.invalid && (address.dirty || address.touched)">
+                  <div *ngIf="address.errors.required">address is required</div>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" name="city" [(ngModel)]="teacher.city" placeholder="City" #city="ngModel" required>
+                <div style="color:red;" *ngIf="city.invalid && (city.dirty || city.touched)">
+                  city is required
+                </div>
+              </div>
+              <div class="input-field col s6">
+                <input type="text" name="state" [(ngModel)]="teacher.state" placeholder="state" #state="ngModel"
+                  required>
+
+                <div style="color:red;" *ngIf="state.invalid && (state.dirty || state.touched)">
+                  state is required
+                </div>
+              </div>
+
+
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" name="country" [(ngModel)]="teacher.country" placeholder="Country" #country="ngModel"
+                  required>
+
+                <div style="color:red;" *ngIf="country.invalid && (country.dirty || country.touched)">
+                  Country is required
+                </div>
+              </div>
+
+              <div class="input-field col s6">
+                <input type="password" name="password" [(ngModel)]="teacher.password" placeholder="Password"
+                  #password="ngModel" required minlength="8">
+                <div style="color:red;" *ngIf="password.invalid && (password.dirty || password.touched)">
+                  <div *ngIf="password.errors.required">Password is required</div>
+                  <div *ngIf="password.errors.minlength">Password must be at least 8 characters</div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="input-field col s6">
+                <select  name="gender" style="display: block;" [(ngModel)]="teacher.gender">
+                  <option value="" disabled selected>Select Status</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+
+              <div class="input-field col s6">
+                <input type="date" name="dob" [(ngModel)]="teacher.dob" #dob="ngModel">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="checkbox" name="status" #status="ngModel" class="filled-in" id="statusBox" checked="checked" [(ngModel)]="teacher.status"/>
+                <label for="statusBox">Status</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="file-field input-field col s4">
+                <div class="btn admin-upload-btn" style="background-color: #2bbbad;padding: 0px 10px;
+                width: 120px;">
+                  <span>File</span>
+                  <!-- <input type="file" > -->
+                  <input (change)="picked($event)" type="file" style="width:120px;">
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="teacher.imgSrc" class="row">
+              <p *ngIf="teacherFileName" style="width:100%">{{teacherFileName.name}}</p><br>
+              <img src="{{'data:image/jpg;base64,' + teacher.imgSrc}}" alt="">
+
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <!-- <i class="waves-effect waves-light btn-large waves-input-wrapper" style="">
+                    <input type="submit" class="waves-button-input">
+                  </i> -->
+                <button class="btn btn-info waves-effect waves-light" (click)="signupHandler()" style="width:200px;"
+                  [disabled]="!f.form.valid">{{buttonTitle}}</button>
+
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
